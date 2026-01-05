@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobJub</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            color: aliceblue;
+        }
+        #yeah {
+            width: 50px;
+            height: 50px;
+            margin: 30px;
+            margin-top: 0;
+            margin-bottom: 70px;
+        }
+        #ahhh {
+            width: 30px;
+            height: 30px;
+            margin: 30px;
+            margin-top: 0;
+            margin-bottom: 70px;
+        }
+        #nah {
+            width: 50px;
+            height: 50px;
+            margin: 30px;
+            margin-top: 0;
+            margin-bottom: 70px;
+        }
+        #question {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="question">
+        <form id="ข้อมูล">
+            <input type="text" name="address" id="address" placeholder="จังหวัดที่อยู่">
+            <select id="grade">
+                <option value="Grade_9">ม.3</option>
+                <option value="Grade_6">ป.6</option>
+            </select>
+        </form>
+
+        <form id="วิทย์">
+            <h2>1.Qustion</h2>
+            <label for="Yes">Yes</label>
+            <input type="radio" name="Q1" value="+3" id="Yes">
+            <input type="radio" name="Q1" value="+2" id="Maybe">
+            <input type="radio" name="Q1" value="+1" id="unsure">
+            <input type="radio" name="Q1" value="+0" id="idk">
+            <input type="radio" name="Q1" value="-1" id="Super_unsure">
+            <input type="radio" name="Q1" value="-2" id="Maybe_not">
+            <input type="radio" name="Q1" value="-3" id="No">
+            <label for="No">No</label>
+
+            <h2>2.Qustion</h2>
+            <label for="Yes">Yes</label>
+            <input type="radio" name="Q2" value="+3" id="Yes">
+            <input type="radio" name="Q2" value="+2" id="Maybe">
+            <input type="radio" name="Q2" value="+1" id="unsure">
+            <input type="radio" name="Q2" value="+0" id="idk">
+            <input type="radio" name="Q2" value="-1" id="Super_unsure">
+            <input type="radio" name="Q2" value="-2" id="Maybe_not">
+            <input type="radio" name="Q2" value="-3" id="No">
+            <label for="No">No</label>
+        </form>
+
+        <form id="ภาษา">
+            <h2>3.Qustion</h2>
+            <label for="Yes">Yes</label>
+            <input type="radio" name="L1" value="+3" id="Yes">
+            <input type="radio" name="L1" value="+2" id="Maybe">
+            <input type="radio" name="L1" value="+1" id="unsure">
+            <input type="radio" name="L1" value="+0" id="idk">
+            <input type="radio" name="L1" value="-1" id="Super_unsure">
+            <input type="radio" name="L1" value="-2" id="Maybe_not">
+            <input type="radio" name="L1" value="-3" id="No">
+            <label for="No">No</label>
+        </form>
+
+        <form id="วิศวะ">
+            <h2>4.Qustion</h2>
+            <label for="Yes">Yes</label>
+            <input type="radio" name="E1" value="+3" id="Yes">
+            <input type="radio" name="E1" value="+2" id="Maybe">
+            <input type="radio" name="E1" value="+1" id="unsure">
+            <input type="radio" name="E1" value="+0" id="idk">
+            <input type="radio" name="E1" value="-1" id="Super_unsure">
+            <input type="radio" name="E1" value="-2" id="Maybe_not">
+            <input type="radio" name="E1" value="-3" id="No">
+            <label for="No">No</label><br>
+        </form>
+        
+        <button type="submit" id="enter" class="enter" onclick="send(event)">Send</button>
+
+    </div>
+
+    <img src="icon.jpg" style="width: 70px; height: 70px; border-radius: 100%;">
+    <h1 id="text">Hi</h1>
+
+    <script>
+        async function send() {
+
+            event.preventDefault();
+
+            let Q_score = 0;
+            let L_score = 0;
+            let E_score = 0;
+            document.querySelectorAll('input[name^="Q"]:checked').forEach(radio => {
+                Q_score += parseInt(radio.value);
+            });
+            document.querySelectorAll('input[name^="L"]:checked').forEach(radio => {
+                L_score += parseInt(radio.value);
+            });
+            document.querySelectorAll('input[name^="E"]:checked').forEach(radio => {
+                E_score += parseInt(radio.value);
+            });
+            const address = document.getElementById('address');
+            const grade = document.getElementById('grade');
+            const text = document.getElementById('text');
+
+            ////////////บอกว่าคำแนนที่มากที่สุดอยู่ที่เท่าไร///////////
+            let full = Math.max(Q_score, L_score, E_score);
+            //////////////////////////////////////////////
+            let winner = [];
+
+            //ดูว่าสายไหนคือสายที่คะแนนมากที่สุด และ ขึ้นเป็น winner
+            if (Q_score === full) winner.push('วิทย์');
+            if (L_score === full) winner.push('ภาษา');
+            if (E_score === full) winner.push('วิศวะ');
+            ///////////////////////////////////////////
+
+            if (winner && address.value && grade.value) {
+
+                text.innerHTML = 'กำลังคิด...';
+
+                try {
+                    const response = await fetch('http://127.0.0.1:5001/ask', { 
+                            method: 'POST',
+                            headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                            body: JSON.stringify({ 
+                                track: winner,
+                                address: address.value,
+                                grade: grade.value
+                            })
+                    });
+
+                    const data = await response.json();
+                    if (!data) {
+                        console.log(data.error);
+                    }
+                    
+                    text.innerHTML = data.text;
+                } catch (error){
+                    console.error
+                }
+            } else {
+                text.innerHTML = 'ป้อนข้อมูลเหอะ';
+            }
+        }
+    </script>
+</body>
+</html>
