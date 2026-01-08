@@ -6,7 +6,7 @@
     <title>JobJub</title>
     <style>
         body {
-            margin: 1px;
+            margin: 0px;
             background-color:beige;
             color: teal;
         }
@@ -19,59 +19,64 @@
             width: 90px;
             height: 90px;
             margin: 20px;
-            margin-top: 5px;
-            margin-bottom: 70px;
-            background-color:lightgreen;
-            accent-color:green;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: white;
         }
         #Maybe {
             width: 75px;
             height: 75px;
             margin: 20px;
-            margin-top: 5px;
-            margin-bottom: 70px;
-            
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: white;
         }
         #unsure {
             width: 60px;
             height: 60px;
             margin: 20px;
-            margin-top: 5px;
-            margin-bottom: 70px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: white;
         }
         #idk {
             width: 45px;
             height: 45px;
             margin: 20px;
-            margin-top: 5px;
-            margin-bottom: 70px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: white;
         }
         #Super_unsure {
             width: 60px;
             height: 60px;
             margin: 20px;
-            margin-top: 5px;
-            margin-bottom: 70px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: white;
         }
         #Maybe_not {
             width: 75px;
             height: 75px;
             margin: 20px;
-            margin-top: 5px;
-            margin-bottom: 70px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: white;
         }
         #No {
             width: 90px;
             height: 90px;
             margin: 20px;
-            margin-top: 5px;
-            margin-bottom: 70px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: white;
         }
         #yesLabel {
             font-size: xx-large;
             }
         #noLabel {
             font-size: xx-large;
+            margin-bottom: 30px;
         }
         #address {
             width:450px;
@@ -85,6 +90,374 @@
         #warning {
             text-align: center;
             margin-bottom: 50px;
+        }
+        #title {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        /* ตกแต่งวงกลม */
+        input[type="radio"] {
+            appearance: none;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        #Yes:checked {
+            background-color: #57ff6d;
+            border-color: #33a474;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #Maybe:checked {
+            background-color: #a8ff6d;
+            border-color: #7aa433;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #unsure:checked {
+            background-color: #d4ff6d;
+            border-color: #a4a433;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #idk:checked {
+            background-color: #ffff6d;
+            border-color: #a4a433;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #Super_unsure:checked {
+            background-color: #ffd76d;
+            border-color: #a47a33;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #Maybe_not:checked {
+            background-color: #ff9f6d;
+            border-color: #a45c33;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #No:checked {
+            background-color: #ff6d6d;
+            border-color: #a43333;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #text {
+            color: teal;
+        }
+        #set {
+            text-align: center;
+        }
+        @media only screen and (min-width: 320px) {
+            #Yes {
+                width: 40px;
+                height: 40px;
+                margin: 5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Maybe {
+                width: 35px;
+                height: 35px;
+                margin: 5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #unsure {
+                width: 25px;
+                height: 25px;
+                margin: 5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #idk {
+                width: 15px;
+                height: 15px;
+                margin: 5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Super_unsure {
+                width: 25px;
+                height: 25px;
+                margin: 5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Maybe_not {
+                width: 35px;
+                height: 35px;
+                margin: 5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #No {
+                width: 40px;
+                height: 40px;
+                margin: 5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #address {
+                width:250px;
+                height: 30px;
+            }
+            #yesLabel {
+                font-size: large;
+            }
+            #noLabel {
+                font-size: large;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            #address {
+                width:350px;
+                height: 35px;
+            }
+        }
+        @media only screen and (min-width: 600px) {
+            #address {
+                width:400px;
+                height: 40px;
+            }
+            #Yes {
+                width: 50px;
+                height: 50px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Maybe {
+                width: 40px;
+                height: 40px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #unsure {
+                width: 30px;
+                height: 30px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #idk {
+                width: 25px;
+                height: 25px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Super_unsure {
+                width: 30px;
+                height: 30px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Maybe_not {
+                width: 40px;
+                height: 40px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #No {
+                width: 50px;
+                height: 50px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+        }
+        @media only screen and (min-width: 768px) {
+            #address {
+                width:450px;
+                height: 45px;
+            }
+            #Yes {
+                width: 70px;
+                height: 70px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Maybe {
+                width: 60px;
+                height: 60px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #unsure {
+                width: 50px;
+                height: 50px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #idk {
+                width: 45px;
+                height: 45px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Super_unsure {
+                width: 50px;
+                height: 50px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Maybe_not {
+                width: 60px;
+                height: 60px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #No {
+                width: 70px;
+                height: 70px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+        }
+        @media only screen and (min-width: 900px) {
+            #address {
+                width:500px;
+                height: 50px;
+            }
+            #Yes {
+                width: 70px;
+                height: 70px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #Maybe {
+                width: 60px;
+                height: 60px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #unsure {
+                width: 50px;
+                height: 50px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #idk {
+                width: 40px;
+                height: 40px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #Super_unsure {
+                width: 50px;
+                height: 50px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #Maybe_not {
+                width: 60px;
+                height: 60px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #No {
+                width: 70px;
+                height: 70px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #yesLabel {
+                font-size: x-large;
+            }
+            #noLabel {
+                font-size: x-large;
+            }
+        }
+        @media only screen and (min-width: 1024px) {
+            #address {
+                width:550px;
+                height: 55px;
+            }
+            #Yes {
+                width: 90px;
+                height: 90px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #Maybe {
+                width: 75px;
+                height: 75px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #unsure {
+                width: 60px;
+                height: 60px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #idk {
+                width: 45px;
+                height: 45px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #Super_unsure {
+                width: 60px;
+                height: 60px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #Maybe_not {
+                width: 75px;
+                height: 75px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #No {
+                width: 90px;
+                height: 90px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #yesLabel {
+                font-size: xx-large;
+            }
+            #noLabel {
+                font-size: xx-large;
+            }
         }
     </style>
 </head>
@@ -549,8 +922,10 @@
 
     </div>
 
-    <img src="/icon.jpg" style="width: 70px; height: 70px; border-radius: 100%;">
-    <h1 id="text">Hi</h1>
+    <div id="set">
+        <img src="/icon.jpg" style="width: 70px; height: 70px; border-radius: 100%;" id="logo">
+        <h1 id="text">Hi</h1>
+    </div>        
 
     <script>
         async function send() {
