@@ -965,6 +965,24 @@
     </div>        
 
     <script>
+        let i = 0;
+        let o = 10;
+        let aq = 0;
+
+        for (i < o; i++, o++;) {
+            document.querySelectorAll('input[name^="Q"]:checked').forEach(radio => {
+                aq += 1;
+            });
+            document.querySelectorAll('input[name^="L"]:checked').forEach(radio => {
+                aq += 1;
+            });
+            document.querySelectorAll('input[name^="E"]:checked').forEach(radio => {
+                aq += 1;
+            });
+
+            console.log(aq);
+        }
+
         async function send() {
 
             event.preventDefault();
