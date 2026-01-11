@@ -73,7 +73,7 @@
         }
         #yesLabel {
             font-size: xx-large;
-            }
+        }
         #noLabel {
             font-size: xx-large;
             margin-bottom: 30px;
@@ -86,13 +86,12 @@
         }
         #info {
             text-align: center;
+            font-family: Playpen;
         }
         #warning {
             text-align: center;
             margin-bottom: 50px;
-        }
-        #title {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Playpen;
         }
         /* ตกแต่งวงกลม */
         input[type="radio"] {
@@ -239,15 +238,23 @@
             }
             #yesLabel {
                 font-size: large;
+                display: none;
             }
             #noLabel {
                 font-size: large;
+                display: none;
             }
         }
         @media only screen and (min-width: 480px) {
             #address {
                 width:350px;
                 height: 35px;
+            }
+            #yesLabel {
+                display: inline;
+            }
+            #noLabel {
+                display: inline;
             }
         }
         @media only screen and (min-width: 600px) {
@@ -495,6 +502,10 @@
             #noLabel {
                 font-size: xx-large;
             }
+        }
+        @font-face {
+            font-family: Playpen;
+            src: url(PlaypenSansThai-VariableFont_wght.ttf);
         }
     </style>
 </head>
@@ -965,24 +976,6 @@
     </div>        
 
     <script>
-        let i = 0;
-        let o = 10;
-        let aq = 0;
-
-        for (i < o; i++, o++;) {
-            document.querySelectorAll('input[name^="Q"]:checked').forEach(radio => {
-                aq += 1;
-            });
-            document.querySelectorAll('input[name^="L"]:checked').forEach(radio => {
-                aq += 1;
-            });
-            document.querySelectorAll('input[name^="E"]:checked').forEach(radio => {
-                aq += 1;
-            });
-
-            console.log(aq);
-        }
-
         async function send() {
 
             event.preventDefault();
