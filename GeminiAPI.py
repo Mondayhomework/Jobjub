@@ -15,11 +15,6 @@ application = Flask(__name__)
 GEMINI_API_KEY_VALUE = os.environ.get("key")
 client = None
 
-url = "https://raw.githubusercontent.com/Leebob001/JobJub/refs/heads/main/provinces.json"
-provinces = requests.get(url).json()
-
-print(provinces)
-
 if GEMINI_API_KEY_VALUE:
     try:
         # ✅ สร้าง Client ด้วยค่าที่ดึงมา (แม้ชื่อจะต่างกัน)
@@ -37,14 +32,15 @@ def handle_gemini_request() : # ✅ เปลี่ยนชื่อฟัง�
     
     data = request.get_json()
 
-    track = data.get('track')
+    aptitude = data.get('Aptitude')
+    preferences = data.get('Preferences')
+    special_Abilities = data.get('Special_Abilities')
+    skills = data.get('Skills')
     address = data.get('address')
-    grade = data.get('grade')
 
-    valid_province_names = [p['name_th'] for p in provinces]
 
-    if track and address and grade and (address in valid_province_names):
-        contents = f"ถนัด {track} อยู่จังหวัด {address} อยู่ชั้น {grade} ไปต่อที่ไหนได้บ้างขอชื่อรร. และ อธิบายสั้นๆ 1 บรรทัด"
+    if aptitude and preferences and special_Abilities and skills and address:
+        contents = f"อยู่ชั้น ป6 ไปต่อที่ไหนได้บ้างขอชื่อรร. และ อธิบายสั้นๆ", aptitude, preferences, special_Abilities, skills, "อยู่จังหวัด", address
         print(contents)
     else :
         print("❌💥")
