@@ -15,6 +15,8 @@
             height:80px;
             margin:20px;
             font-family: Playpen;
+            border-radius: 10px;
+            border: 1px solid;
         }
         #Yes {
             width: 90px;
@@ -181,9 +183,6 @@
         #text {
             color: teal;
             font-family: Playpen;
-        }
-        #set {
-            text-align: center;
         }
         @media only screen and (min-width: 320px) {
             #Yes {
@@ -515,8 +514,6 @@
 <body>
     <div id="warning">
         <h1 id="title">JOBJUB</h1>
-        <h3 id="ihnid">ในกรอบ</h3>
-        <p id="|">|</p>
         <h3 id="para">แค่ตอบคำถามเพียง40ข้อเราก็สามารถแนะนำเกี่ยวกับการเรียนต่อได้</h3>
         <h3 id="graph">คำตอบที่คุณตอบจะไม่ถูกเปิดเป็นสาธารณะ</h3>
     </div>
@@ -695,13 +692,13 @@
 
             <h2>16.คุณมักจะชอบอาหารรสชาติแปลกใหม่มากกว่าอาหารที่คุ้นเคยเดิมๆใช่หรือไม่?</h2>
             <label for="Yes" id="yesLabel">Yes</label>
-            <input type="radio" name="LP2" value="+3" id="Yes">
-            <input type="radio" name="LP2" value="+2" id="Maybe">
-            <input type="radio" name="LP2" value="+1" id="unsure">
-            <input type="radio" name="LP2" value="+0" id="idk">
-            <input type="radio" name="LP2" value="-1" id="Super_unsure">
-            <input type="radio" name="LP2" value="-2" id="Maybe_not">
-            <input type="radio" name="LP2" value="-3" id="No">
+            <input type="radio" name="EP2" value="+3" id="Yes">
+            <input type="radio" name="EP2" value="+2" id="Maybe">
+            <input type="radio" name="EP2" value="+1" id="unsure">
+            <input type="radio" name="EP2" value="+0" id="idk">
+            <input type="radio" name="EP2" value="-1" id="Super_unsure">
+            <input type="radio" name="EP2" value="-2" id="Maybe_not">
+            <input type="radio" name="EP2" value="-3" id="No">
             <label for="No" id="noLabel">No</label><br>
 
             <h2>17.คุณชอบเพลงที่ซับซ้อนทางดนตรีมากกว่าเพลงที่ติดหูง่ายๆใช่ไหม?</h2>
@@ -739,13 +736,13 @@
 
             <h2>20.คุณมักจะชอบสีสันที่เรียบง่ายและมินิมอลมากกว่าที่สดใสฉูดฉาดใช่หรือไม่?</h2>
             <label for="Yes" id="yesLabel">Yes</label>
-            <input type="radio" name="EP4" value="+3" id="Yes">
-            <input type="radio" name="EP4" value="+2" id="Maybe">
-            <input type="radio" name="EP4" value="+1" id="unsure">
-            <input type="radio" name="EP4" value="+0" id="idk">
-            <input type="radio" name="EP4" value="-1" id="Super_unsure">
-            <input type="radio" name="EP4" value="-2" id="Maybe_not">
-            <input type="radio" name="EP4" value="-3" id="No">
+            <input type="radio" name="IP4" value="+3" id="Yes">
+            <input type="radio" name="IP4" value="+2" id="Maybe">
+            <input type="radio" name="IP4" value="+1" id="unsure">
+            <input type="radio" name="IP4" value="+0" id="idk">
+            <input type="radio" name="IP4" value="-1" id="Super_unsure">
+            <input type="radio" name="IP4" value="-2" id="Maybe_not">
+            <input type="radio" name="IP4" value="-3" id="No">
             <label for="No" id="noLabel">No</label><br>
 
             <h2>21.คุณมีความสามารถพิเศษในการจดจำรายละเอียดเล็กๆ น้อยๆ ได้นานใช่ไหม?</h2>
@@ -816,13 +813,13 @@
 
             <h2>27.คุณมีความสามารถพิเศษในการเรียนภาษาใหม่ได้เร็วกว่าคนทั่วไปใช่ไหม?</h2>
             <label for="Yes" id="yesLabel">Yes</label>
-            <input type="radio" name="LS2" value="+3" id="Yes">
-            <input type="radio" name="LS2" value="+2" id="Maybe">
-            <input type="radio" name="LS2" value="+1" id="unsure">
-            <input type="radio" name="LS2" value="+0" id="idk">
-            <input type="radio" name="LS2" value="-1" id="Super_unsure">
-            <input type="radio" name="LS2" value="-2" id="Maybe_not">
-            <input type="radio" name="LS2" value="-3" id="No">
+            <input type="radio" name="OS2" value="+3" id="Yes">
+            <input type="radio" name="OS2" value="+2" id="Maybe">
+            <input type="radio" name="OS2" value="+1" id="unsure">
+            <input type="radio" name="OS2" value="+0" id="idk">
+            <input type="radio" name="OS2" value="-1" id="Super_unsure">
+            <input type="radio" name="OS2" value="-2" id="Maybe_not">
+            <input type="radio" name="OS2" value="-3" id="No">
             <label for="No" id="noLabel">No</label><br>
 
             <h2>28.คุณมักจะมีความสามารถพิเศษในการจัดการความขัดแย้งให้จบลงด้วยดีใช่หรือไม่?</h2>
@@ -973,11 +970,6 @@
 
     </div>
 
-    <div id="set">
-        <img src="/icon.jpg" style="width: 70px; height: 70px; border-radius: 100%;" id="logo">
-        <h1 id="text">Hi</h1>
-    </div>        
-
     <script>
         async function send(event) {
             event.preventDefault();
@@ -1048,12 +1040,12 @@
 
             // 3. เตรียมข้อมูลส่ง
             const addressInput = document.getElementById('address');
-            const textOutput = document.getElementById('text');
+            const enter = document.getElementById('enter');
+
+            enter.disabled = true;
 
             // ตรวจสอบว่ากรอกข้อมูลครบไหม
             if (addressInput.value && a.length > 0 && p.length > 0 && s.length > 0 && k.length > 0) {
-                
-                textOutput.innerHTML = '⏳ กำลังประมวลผลความสามารถของคุณ...';
 
                 try {
                     const response = await fetch('http://127.0.0.1:5001/ask', { 
@@ -1071,20 +1063,25 @@
                     const data = await response.json();
                     
                     if (data.text) {
-                        textOutput.innerHTML = data.text;
+
+                        localStorage.setItem('jobjub_result', data.text);
+                        localStorage.setItem('aptitude', a);
+                        localStorage.setItem('preferences', p);
+                        localStorage.setItem('special_abilities', s);
+                        localStorage.setItem('skills', k);
+
+                        window.location.href = 'result.html';
                     } else {
-                        textOutput.innerHTML = '❌ เกิดข้อผิดพลาดจาก Server: ' + data.error;
+                        alert('❌ เกิดข้อผิดพลาดจาก Server: ' + data.error)
                     }
 
                 } catch (error) {
                     console.error(error);
-                    textOutput.innerHTML = '❌ เชื่อมต่อ Server ไม่ได้ (ลืมรัน Python?)';
                 }
             } else {
-                textOutput.innerHTML = '⚠️ กรุณากรอกจังหวัดและทำแบบทดสอบให้ครบทุกข้อ';
+                alert('⚠️ กรุณากรอกจังหวัดและทำแบบทดสอบให้ครบทุกข้อ');
             }
         }
     </script>
 </body>
-
 </html>

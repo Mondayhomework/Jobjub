@@ -40,7 +40,7 @@ def handle_gemini_request() : # ✅ เปลี่ยนชื่อฟัง�
 
 
     if aptitude and preferences and special_Abilities and skills and address:
-        contents = f"อยู่ชั้น ป6 ไปต่อที่ไหนได้บ้างขอชื่อรร. และ อธิบายสั้นๆ", aptitude, preferences, special_Abilities, skills, "อยู่จังหวัด", address
+        contents = f"อยู่ชั้น ป6 ไปต่อที่ไหนได้บ้างขอชื่อรร. และ อธิบายสั้นๆ1บรรทัด", aptitude, preferences, special_Abilities, skills, "อยู่จังหวัด", address
         print(contents)
     else :
         print("❌💥")
@@ -56,7 +56,7 @@ def handle_gemini_request() : # ✅ เปลี่ยนชื่อฟัง�
         print("💡 START: Calling Gemini API...")
 
         answer = client.models.generate_content(
-                model='gemini-2.5-flash',
+                model='gemini-3-flash-preview',
                 contents=contents,
             )
 
