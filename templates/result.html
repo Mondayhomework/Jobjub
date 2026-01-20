@@ -12,7 +12,6 @@
             font-family: Playpen;
         }
         #result {
-<<<<<<< HEAD
             justify-self: center;
             margin-top: 50px;
             font-family: Playpen;
@@ -21,8 +20,6 @@
         #no-answer {
             display: none;
             justify-self: center;
-=======
->>>>>>> f7d6a4135fa4424d85e686f980aad169809534bb
             text-align: center;
             margin-top: 50px;
             font-family: Playpen;
@@ -36,7 +33,6 @@
 <body>
     <div id="result">
         <h3 id="result-text"></h3>
-<<<<<<< HEAD
         <h3 id="aText"></h3>
         <h3 id="pText"></h3>
         <h3 id="sText"></h3>
@@ -53,20 +49,6 @@
         const p = sessionStorage.getItem('preferences');
         const s = sessionStorage.getItem('special_abilities');
         const k = sessionStorage.getItem('skills');
-=======
-        <h1 id="aText"></h1>
-        <h1 id="pText"></h1>
-        <h1 id="sText"></h1>
-        <h1 id="kText"></h1>
-    </div>
-
-    <script>
-        const result = localStorage.getItem('jobjub_result');
-        const a = localStorage.getItem('aptitude');
-        const p = localStorage.getItem('preferences');
-        const s = localStorage.getItem('special_abilities');
-        const k = localStorage.getItem('skills');
->>>>>>> f7d6a4135fa4424d85e686f980aad169809534bb
 
         if (result) {
             document.getElementById('result-text').innerText = result;
@@ -75,13 +57,9 @@
             document.getElementById('sText').innerText = s;
             document.getElementById('kText').innerText = k;
         } else {
-<<<<<<< HEAD
             document.getElementById('no-answer').style.display = 'block';
             document.getElementById('result').style.display = 'none';
             document.getElementById('none').innerText = 'ไม่พบข้อมูลผลการทดสอบ';
-=======
-            document.getElementById('result-text').innerText = "ไม่พบข้อมูลผลการทดสอบ";
->>>>>>> f7d6a4135fa4424d85e686f980aad169809534bb
         }
     </script>
 </body>
