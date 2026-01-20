@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result - JobJub</title>
+    <style>
+        body {
+            margin: 0px;
+            background-color:beige;
+            color: teal;
+            font-family: Playpen;
+        }
+        #result {
+            text-align: center;
+            margin-top: 50px;
+            font-family: Playpen;
+        }
+        @font-face {
+            font-family: Playpen;
+            src: url(PlaypenSansThai-VariableFont_wght.ttf);
+        }
+    </style>
+</head>
+<body>
+    <div id="result">
+        <h3 id="result-text"></h3>
+        <h1 id="aText"></h1>
+        <h1 id="pText"></h1>
+        <h1 id="sText"></h1>
+        <h1 id="kText"></h1>
+    </div>
+
+    <script>
+        const result = localStorage.getItem('jobjub_result');
+        const a = localStorage.getItem('aptitude');
+        const p = localStorage.getItem('preferences');
+        const s = localStorage.getItem('special_abilities');
+        const k = localStorage.getItem('skills');
+
+        if (result) {
+            document.getElementById('result-text').innerText = result;
+            document.getElementById('aText').innerText = a;
+            document.getElementById('pText').innerText = p;
+            document.getElementById('sText').innerText = s;
+            document.getElementById('kText').innerText = k;
+        } else {
+            document.getElementById('result-text').innerText = "ไม่พบข้อมูลผลการทดสอบ";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobJub</title>
+    <style>
+        body {
+            margin: 0px;
+            background-color:beige;
+            color: teal;
+        }
+        #enter {
+            width: 100px;
+            height:80px;
+            margin:20px;
+            font-family: Playpen;
+            border-radius: 10px;
+            border: 1px solid;
+        }
+        #Yes {
+            width: 90px;
+            height: 90px;
+            margin: 20px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: white;
+        }
+        #Maybe {
+            width: 75px;
+            height: 75px;
+            margin: 20px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: white;
+        }
+        #unsure {
+            width: 60px;
+            height: 60px;
+            margin: 20px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: white;
+        }
+        #idk {
+            width: 45px;
+            height: 45px;
+            margin: 20px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: white;
+        }
+        #Super_unsure {
+            width: 60px;
+            height: 60px;
+            margin: 20px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: white;
+        }
+        #Maybe_not {
+            width: 75px;
+            height: 75px;
+            margin: 20px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: white;
+        }
+        #No {
+            width: 90px;
+            height: 90px;
+            margin: 20px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: white;
+        }
+        #yesLabel {
+            font-size: xx-large;
+        }
+        #noLabel {
+            font-size: xx-large;
+            margin-bottom: 30px;
+        }
+        #address {
+            width: 450px;
+            height: 45px;
+            margin-bottom: 45px;
+            font-size: large;
+            font-family: Playpen;
+        }
+        #info {
+            text-align: center;
+            font-family: Playpen;
+        }
+        #warning {
+            text-align: center;
+            margin-bottom: 50px;
+            font-family: Playpen;
+        }
+        /* ตกแต่งวงกลม */
+        input[type="radio"] {
+            appearance: none;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        #Yes:checked {
+            background-color: #57ff6d;
+            border-color: #33a474;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #Maybe:checked {
+            background-color: #a8ff6d;
+            border-color: #7aa433;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #unsure:checked {
+            background-color: #d4ff6d;
+            border-color: #a4a433;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #idk:checked {
+            background-color: #ffff6d;
+            border-color: #a4a433;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #Super_unsure:checked {
+            background-color: #ffd76d;
+            border-color: #a47a33;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #Maybe_not:checked {
+            background-color: #ff9f6d;
+            border-color: #a45c33;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #No:checked {
+            background-color: #ff6d6d;
+            border-color: #a43333;
+            box-shadow: inset 0 0 0 4px white;
+        }
+
+        #Yes:hover {
+            background-color: #57ff6d85;
+            border-color: #33a474;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #Maybe:hover {
+            background-color: #a8ff6d85;
+            border-color: #7aa433;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #unsure:hover {
+            background-color: #d4ff6d85;
+            border-color: #a4a433;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #idk:hover {
+            background-color: #ffff6d85;
+            border-color: #a4a433;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #Super_unsure:hover {
+            background-color: #ffd76d85;
+            border-color: #a47a33;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #Maybe_not:hover {
+            background-color: #ff9f6d85;
+            border-color: #a45c33;
+            box-shadow: inset 0 0 0 4px white;
+        }
+        #No:hover {
+            background-color: #ff6d6d85;
+            border-color: #a43333;
+            box-shadow: inset 0 0 0 4px white;
+        }
+
+        #text {
+            color: teal;
+            font-family: Playpen;
+        }
+        @media only screen and (min-width: 320px) {
+            #Yes {
+                width: 40px;
+                height: 40px;
+                margin: 5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Maybe {
+                width: 35px;
+                height: 35px;
+                margin: 5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #unsure {
+                width: 25px;
+                height: 25px;
+                margin: 5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #idk {
+                width: 15px;
+                height: 15px;
+                margin: 5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Super_unsure {
+                width: 25px;
+                height: 25px;
+                margin: 5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Maybe_not {
+                width: 35px;
+                height: 35px;
+                margin: 5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #No {
+                width: 40px;
+                height: 40px;
+                margin: 5px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #address {
+                width:250px;
+                height: 30px;
+            }
+            #yesLabel {
+                font-size: large;
+                display: none;
+            }
+            #noLabel {
+                font-size: large;
+                display: none;
+            }
+        }
+        @media only screen and (min-width: 480px) {
+            #address {
+                width:350px;
+                height: 35px;
+            }
+            #yesLabel {
+                display: inline;
+            }
+            #noLabel {
+                display: inline;
+            }
+        }
+        @media only screen and (min-width: 600px) {
+            #address {
+                width:400px;
+                height: 40px;
+            }
+            #Yes {
+                width: 50px;
+                height: 50px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Maybe {
+                width: 40px;
+                height: 40px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #unsure {
+                width: 30px;
+                height: 30px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #idk {
+                width: 25px;
+                height: 25px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Super_unsure {
+                width: 30px;
+                height: 30px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Maybe_not {
+                width: 40px;
+                height: 40px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #No {
+                width: 50px;
+                height: 50px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+        }
+        @media only screen and (min-width: 768px) {
+            #address {
+                width:450px;
+                height: 45px;
+            }
+            #Yes {
+                width: 70px;
+                height: 70px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Maybe {
+                width: 60px;
+                height: 60px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #unsure {
+                width: 50px;
+                height: 50px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #idk {
+                width: 45px;
+                height: 45px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Super_unsure {
+                width: 50px;
+                height: 50px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #Maybe_not {
+                width: 60px;
+                height: 60px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+            #No {
+                width: 70px;
+                height: 70px;
+                margin: 15px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+        }
+        @media only screen and (min-width: 900px) {
+            #address {
+                width:500px;
+                height: 50px;
+            }
+            #Yes {
+                width: 70px;
+                height: 70px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #Maybe {
+                width: 60px;
+                height: 60px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #unsure {
+                width: 50px;
+                height: 50px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #idk {
+                width: 40px;
+                height: 40px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #Super_unsure {
+                width: 50px;
+                height: 50px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #Maybe_not {
+                width: 60px;
+                height: 60px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #No {
+                width: 70px;
+                height: 70px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #yesLabel {
+                font-size: x-large;
+            }
+            #noLabel {
+                font-size: x-large;
+            }
+        }
+        @media only screen and (min-width: 1024px) {
+            #address {
+                width:550px;
+                height: 55px;
+            }
+            #Yes {
+                width: 90px;
+                height: 90px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #Maybe {
+                width: 75px;
+                height: 75px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #unsure {
+                width: 60px;
+                height: 60px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #idk {
+                width: 45px;
+                height: 45px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #Super_unsure {
+                width: 60px;
+                height: 60px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #Maybe_not {
+                width: 75px;
+                height: 75px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #No {
+                width: 90px;
+                height: 90px;
+                margin: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                background-color: white;
+            }
+            #yesLabel {
+                font-size: xx-large;
+            }
+            #noLabel {
+                font-size: xx-large;
+            }
+        }
+        @font-face {
+            font-family: Playpen;
+            src: url(PlaypenSansThai-VariableFont_wght.ttf);
+        }
+    </style>
+</head>
+<body>
+    <div id="warning">
+        <h1 id="title">JOBJUB</h1>
+        <h3 id="para">แค่ตอบคำถามเพียง40ข้อเราก็สามารถแนะนำเกี่ยวกับการเรียนต่อได้</h3>
+        <h3 id="graph">คำตอบที่คุณตอบจะไม่ถูกเปิดเป็นสาธารณะ</h3>
+    </div>
+
+    <div id="info">
+        <form id="ข้อมูล">
+            <input type="text" name="address" id="address" placeholder="จังหวัดที่อยู่">
+          
+        </form>
+
+        <form id="question">
+            <h2>1.คุณมักจะมองเห็นโอกาสในสถานการณ์ที่คนอื่นเห็นแต่ปัญหาเท่านั้นใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="OA1" value="+3" id="Yes">
+            <input type="radio" name="OA1" value="+2" id="Maybe">
+            <input type="radio" name="OA1" value="+1" id="unsure">
+            <input type="radio" name="OA1" value="+0" id="idk">
+            <input type="radio" name="OA1" value="-1" id="Super_unsure">
+            <input type="radio" name="OA1" value="-2" id="Maybe_not">
+            <input type="radio" name="OA1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label>
+
+            <h2>2.คุณสามารถปรับตัวเข้ากับการเปลี่ยนแปลงที่ไม่คาดคิดได้อย่างรวดเร็วใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="AA1" value="+3" id="Yes">
+            <input type="radio" name="AA1" value="+2" id="Maybe">
+            <input type="radio" name="AA1" value="+1" id="unsure">
+            <input type="radio" name="AA1" value="+0" id="idk">
+            <input type="radio" name="AA1" value="-1" id="Super_unsure">
+            <input type="radio" name="AA1" value="-2" id="Maybe_not">
+            <input type="radio" name="AA1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label>
+
+            <h2>3.คุณถนัดในการวิเคราะห์ข้อมูลที่ซับซ้อนเพื่อหาข้อสรุปที่ชัดเจนหรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="PA1" value="+3" id="Yes">
+            <input type="radio" name="PA1" value="+2" id="Maybe">
+            <input type="radio" name="PA1" value="+1" id="unsure">
+            <input type="radio" name="PA1" value="+0" id="idk">
+            <input type="radio" name="PA1" value="-1" id="Super_unsure">
+            <input type="radio" name="PA1" value="-2" id="Maybe_not">
+            <input type="radio" name="PA1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label>
+
+            <h2>4.คุณมีความถนัดในการจัดการเวลาเพื่อให้งานหลายอย่างเสร็จทันกำหนดใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="PA2" value="+3" id="Yes">
+            <input type="radio" name="PA2" value="+2" id="Maybe">
+            <input type="radio" name="PA2" value="+1" id="unsure">
+            <input type="radio" name="PA2" value="+0" id="idk">
+            <input type="radio" name="PA2" value="-1" id="Super_unsure">
+            <input type="radio" name="PA2" value="-2" id="Maybe_not">
+            <input type="radio" name="PA2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label>
+
+            <h2>5.คุณมักจะถนัดในการแก้ไขปัญหาทางเทคนิคโดยไม่ต้องพึ่งพาคนอื่นใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="AA2" value="+3" id="Yes">
+            <input type="radio" name="AA2" value="+2" id="Maybe">
+            <input type="radio" name="AA2" value="+1" id="unsure">
+            <input type="radio" name="AA2" value="+0" id="idk">
+            <input type="radio" name="AA2" value="-1" id="Super_unsure">
+            <input type="radio" name="AA2" value="-2" id="Maybe_not">
+            <input type="radio" name="AA2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>6.คุณมีความถนัดในการเรียนรู้ทักษะใหม่ๆ จากการทดลองด้วยตัวเองใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="AA3" value="+3" id="Yes">
+            <input type="radio" name="AA3" value="+2" id="Maybe">
+            <input type="radio" name="AA3" value="+1" id="unsure">
+            <input type="radio" name="AA3" value="+0" id="idk">
+            <input type="radio" name="AA3" value="-1" id="Super_unsure">
+            <input type="radio" name="AA3" value="-2" id="Maybe_not">
+            <input type="radio" name="AA3" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>7.คุณถนัดในการสังเกตพฤติกรรมของคนอื่นเพื่อเข้าใจแรงจูงใจของพวกเขาหรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="OA2" value="+3" id="Yes">
+            <input type="radio" name="OA2" value="+2" id="Maybe">
+            <input type="radio" name="OA2" value="+1" id="unsure">
+            <input type="radio" name="OA2" value="+0" id="idk">
+            <input type="radio" name="OA2" value="-1" id="Super_unsure">
+            <input type="radio" name="OA2" value="-2" id="Maybe_not">
+            <input type="radio" name="OA2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>8.คุณมักจะถนัดในการวางแผนระยะยาวที่ครอบคลุมรายละเอียดเล็กน้อยใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="PA3" value="+3" id="Yes">
+            <input type="radio" name="PA3" value="+2" id="Maybe">
+            <input type="radio" name="PA3" value="+1" id="unsure">
+            <input type="radio" name="PA3" value="+0" id="idk">
+            <input type="radio" name="PA3" value="-1" id="Super_unsure">
+            <input type="radio" name="PA3" value="-2" id="Maybe_not">
+            <input type="radio" name="PA3" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>9.คุณมีความถนัดในการทำงานภายใต้แรงกดดันโดยไม่เสียสมาธิใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="AA4" value="+3" id="Yes">
+            <input type="radio" name="AA4" value="+2" id="Maybe">
+            <input type="radio" name="AA4" value="+1" id="unsure">
+            <input type="radio" name="AA4" value="+0" id="idk">
+            <input type="radio" name="AA4" value="-1" id="Super_unsure">
+            <input type="radio" name="AA4" value="-2" id="Maybe_not">
+            <input type="radio" name="AA4" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>10.คุณถนัดในการเชื่อมโยงไอเดียจากหลากหลายสาขาเพื่อสร้างแนวคิดใหม่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="OA3" value="+3" id="Yes">
+            <input type="radio" name="OA3" value="+2" id="Maybe">
+            <input type="radio" name="OA3" value="+1" id="unsure">
+            <input type="radio" name="OA3" value="+0" id="idk">
+            <input type="radio" name="OA3" value="-1" id="Super_unsure">
+            <input type="radio" name="OA3" value="-2" id="Maybe_not">
+            <input type="radio" name="OA3" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>11.คุณชอบสภาพแวดล้อมที่เงียบสงบมากกว่าที่พลุกพล่านและมีเสียงดังใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="IP1" value="+3" id="Yes">
+            <input type="radio" name="IP1" value="+2" id="Maybe">
+            <input type="radio" name="IP1" value="+1" id="unsure">
+            <input type="radio" name="IP1" value="+0" id="idk">
+            <input type="radio" name="IP1" value="-1" id="Super_unsure">
+            <input type="radio" name="IP1" value="-2" id="Maybe_not">
+            <input type="radio" name="IP1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>12.คุณมักจะชอบทำงานคนเดียวมากกว่างานที่ต้องร่วมมือกับทีมใหญ่ใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="IP2" value="+3" id="Yes">
+            <input type="radio" name="IP2" value="+2" id="Maybe">
+            <input type="radio" name="IP2" value="+1" id="unsure">
+            <input type="radio" name="IP2" value="+0" id="idk">
+            <input type="radio" name="IP2" value="-1" id="Super_unsure">
+            <input type="radio" name="IP2" value="-2" id="Maybe_not">
+            <input type="radio" name="IP2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+            
+            <h2>13.คุณชอบหนังสือหรือเนื้อหาที่กระตุ้นความคิดมากกว่าที่เน้นความบันเทิงใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="QP1" value="+3" id="Yes">
+            <input type="radio" name="QP1" value="+2" id="Maybe">
+            <input type="radio" name="QP1" value="+1" id="unsure">
+            <input type="radio" name="QP1" value="+0" id="idk">
+            <input type="radio" name="QP1" value="-1" id="Super_unsure">
+            <input type="radio" name="QP1" value="-2" id="Maybe_not">
+            <input type="radio" name="QP1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>14.คุณมักจะชอบการสนทนาที่ลึกซึ้งมากกว่าการพูดคุยเรื่องทั่วไปใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="QP2" value="+3" id="Yes">
+            <input type="radio" name="QP2" value="+2" id="Maybe">
+            <input type="radio" name="QP2" value="+1" id="unsure">
+            <input type="radio" name="QP2" value="+0" id="idk">
+            <input type="radio" name="QP2" value="-1" id="Super_unsure">
+            <input type="radio" name="QP2" value="-2" id="Maybe_not">
+            <input type="radio" name="QP2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>15.คุณชอบกิจกรรมกลางแจ้งที่ผจญภัยมากกว่าการพักผ่อนแบบสบายๆในบ้านใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="EP1" value="+3" id="Yes">
+            <input type="radio" name="EP1" value="+2" id="Maybe">
+            <input type="radio" name="EP1" value="+1" id="unsure">
+            <input type="radio" name="EP1" value="+0" id="idk">
+            <input type="radio" name="EP1" value="-1" id="Super_unsure">
+            <input type="radio" name="EP1" value="-2" id="Maybe_not">
+            <input type="radio" name="EP1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>16.คุณมักจะชอบอาหารรสชาติแปลกใหม่มากกว่าอาหารที่คุ้นเคยเดิมๆใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="EP2" value="+3" id="Yes">
+            <input type="radio" name="EP2" value="+2" id="Maybe">
+            <input type="radio" name="EP2" value="+1" id="unsure">
+            <input type="radio" name="EP2" value="+0" id="idk">
+            <input type="radio" name="EP2" value="-1" id="Super_unsure">
+            <input type="radio" name="EP2" value="-2" id="Maybe_not">
+            <input type="radio" name="EP2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>17.คุณชอบเพลงที่ซับซ้อนทางดนตรีมากกว่าเพลงที่ติดหูง่ายๆใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="QP3" value="+3" id="Yes">
+            <input type="radio" name="QP3" value="+2" id="Maybe">
+            <input type="radio" name="QP3" value="+1" id="unsure">
+            <input type="radio" name="QP3" value="+0" id="idk">
+            <input type="radio" name="QP3" value="-1" id="Super_unsure">
+            <input type="radio" name="QP3" value="-2" id="Maybe_not">
+            <input type="radio" name="QP3" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>18.คุณมักจะชอบการเดินทางคนเดียวมากกว่าการไปกับกลุ่มเพื่อนใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="IP3" value="+3" id="Yes">
+            <input type="radio" name="IP3" value="+2" id="Maybe">
+            <input type="radio" name="IP3" value="+1" id="unsure">
+            <input type="radio" name="IP3" value="+0" id="idk">
+            <input type="radio" name="IP3" value="-1" id="Super_unsure">
+            <input type="radio" name="IP3" value="-2" id="Maybe_not">
+            <input type="radio" name="IP3" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>19.คุณชอบงานอดิเรกที่ต้องใช้สมองมากกว่างานที่ต้องใช้แรงกายใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="QP4" value="+3" id="Yes">
+            <input type="radio" name="QP4" value="+2" id="Maybe">
+            <input type="radio" name="QP4" value="+1" id="unsure">
+            <input type="radio" name="QP4" value="+0" id="idk">
+            <input type="radio" name="QP4" value="-1" id="Super_unsure">
+            <input type="radio" name="QP4" value="-2" id="Maybe_not">
+            <input type="radio" name="QP4" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>20.คุณมักจะชอบสีสันที่เรียบง่ายและมินิมอลมากกว่าที่สดใสฉูดฉาดใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="IP4" value="+3" id="Yes">
+            <input type="radio" name="IP4" value="+2" id="Maybe">
+            <input type="radio" name="IP4" value="+1" id="unsure">
+            <input type="radio" name="IP4" value="+0" id="idk">
+            <input type="radio" name="IP4" value="-1" id="Super_unsure">
+            <input type="radio" name="IP4" value="-2" id="Maybe_not">
+            <input type="radio" name="IP4" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>21.คุณมีความสามารถพิเศษในการจดจำรายละเอียดเล็กๆ น้อยๆ ได้นานใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="WS1" value="+3" id="Yes">
+            <input type="radio" name="WS1" value="+2" id="Maybe">
+            <input type="radio" name="WS1" value="+1" id="unsure">
+            <input type="radio" name="WS1" value="+0" id="idk">
+            <input type="radio" name="WS1" value="-1" id="Super_unsure">
+            <input type="radio" name="WS1" value="-2" id="Maybe_not">
+            <input type="radio" name="WS1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>22.คุณมักจะมีความสามารถพิเศษในการโน้มน้าวใจคนอื่นด้วยคำพูดใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="DS1" value="+3" id="Yes">
+            <input type="radio" name="DS1" value="+2" id="Maybe">
+            <input type="radio" name="DS1" value="+1" id="unsure">
+            <input type="radio" name="DS1" value="+0" id="idk">
+            <input type="radio" name="DS1" value="-1" id="Super_unsure">
+            <input type="radio" name="DS1" value="-2" id="Maybe_not">
+            <input type="radio" name="DS1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>23.คุณมีความสามารถพิเศษในการมองเห็นจุดอ่อนในแผนการก่อนที่มันจะล้มเหลวใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="WS2" value="+3" id="Yes">
+            <input type="radio" name="WS2" value="+2" id="Maybe">
+            <input type="radio" name="WS2" value="+1" id="unsure">
+            <input type="radio" name="WS2" value="+0" id="idk">
+            <input type="radio" name="WS2" value="-1" id="Super_unsure">
+            <input type="radio" name="WS2" value="-2" id="Maybe_not">
+            <input type="radio" name="WS2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>24.คุณมักจะมีความสามารถพิเศษในการสร้างสรรค์ไอเดียที่ไม่เหมือนใครใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="OS1" value="+3" id="Yes">
+            <input type="radio" name="OS1" value="+2" id="Maybe">
+            <input type="radio" name="OS1" value="+1" id="unsure">
+            <input type="radio" name="OS1" value="+0" id="idk">
+            <input type="radio" name="OS1" value="-1" id="Super_unsure">
+            <input type="radio" name="OS1" value="-2" id="Maybe_not">
+            <input type="radio" name="OS1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>25.คุณมีความสามารถพิเศษในการอ่านอารมณ์ของคนอื่นจากภาษากายใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="BS1" value="+3" id="Yes">
+            <input type="radio" name="BS1" value="+2" id="Maybe">
+            <input type="radio" name="BS1" value="+1" id="unsure">
+            <input type="radio" name="BS1" value="+0" id="idk">
+            <input type="radio" name="BS1" value="-1" id="Super_unsure">
+            <input type="radio" name="BS1" value="-2" id="Maybe_not">
+            <input type="radio" name="BS1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>26.คุณมักจะมีความสามารถพิเศษในการแก้ปัญหาด้วยวิธีที่ประหยัดเวลาใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="WS3" value="+3" id="Yes">
+            <input type="radio" name="WS3" value="+2" id="Maybe">
+            <input type="radio" name="WS3" value="+1" id="unsure">
+            <input type="radio" name="WS3" value="+0" id="idk">
+            <input type="radio" name="WS3" value="-1" id="Super_unsure">
+            <input type="radio" name="WS3" value="-2" id="Maybe_not">
+            <input type="radio" name="WS3" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>27.คุณมีความสามารถพิเศษในการเรียนภาษาใหม่ได้เร็วกว่าคนทั่วไปใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="OS2" value="+3" id="Yes">
+            <input type="radio" name="OS2" value="+2" id="Maybe">
+            <input type="radio" name="OS2" value="+1" id="unsure">
+            <input type="radio" name="OS2" value="+0" id="idk">
+            <input type="radio" name="OS2" value="-1" id="Super_unsure">
+            <input type="radio" name="OS2" value="-2" id="Maybe_not">
+            <input type="radio" name="OS2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>28.คุณมักจะมีความสามารถพิเศษในการจัดการความขัดแย้งให้จบลงด้วยดีใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="BS2" value="+3" id="Yes">
+            <input type="radio" name="BS2" value="+2" id="Maybe">
+            <input type="radio" name="BS2" value="+1" id="unsure">
+            <input type="radio" name="BS2" value="+0" id="idk">
+            <input type="radio" name="BS2" value="-1" id="Super_unsure">
+            <input type="radio" name="BS2" value="-2" id="Maybe_not">
+            <input type="radio" name="BS2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>29.คุณมีความสามารถพิเศษในการวาดภาพหรือออกแบบสิ่งของจากจินตนาการใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="WS4" value="+3" id="Yes">
+            <input type="radio" name="WS4" value="+2" id="Maybe">
+            <input type="radio" name="WS4" value="+1" id="unsure">
+            <input type="radio" name="WS4" value="+0" id="idk">
+            <input type="radio" name="WS4" value="-1" id="Super_unsure">
+            <input type="radio" name="WS4" value="-2" id="Maybe_not">
+            <input type="radio" name="WS4" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>30.คุณมักจะมีความสามารถพิเศษในการคาดการณ์แนวโน้มในอนาคตจากข้อมูลปัจจุบันใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="WS5" value="+3" id="Yes">
+            <input type="radio" name="WS5" value="+2" id="Maybe">
+            <input type="radio" name="WS5" value="+1" id="unsure">
+            <input type="radio" name="WS5" value="+0" id="idk">
+            <input type="radio" name="WS5" value="-1" id="Super_unsure">
+            <input type="radio" name="WS5" value="-2" id="Maybe_not">
+            <input type="radio" name="WS5" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>31.คุณมีทักษะในการเขียนโค้ดหรือโปรแกรมคอมพิวเตอร์ในระดับพื้นฐานหรือสูงกว่าใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="AK1" value="+3" id="Yes">
+            <input type="radio" name="AK1" value="+2" id="Maybe">
+            <input type="radio" name="AK1" value="+1" id="unsure">
+            <input type="radio" name="AK1" value="+0" id="idk">
+            <input type="radio" name="AK1" value="-1" id="Super_unsure">
+            <input type="radio" name="AK1" value="-2" id="Maybe_not">
+            <input type="radio" name="AK1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>32.คุณมักจะมีทักษะในการพูดต่อหน้าสาธารณะโดยไม่ตื่นตระหนกใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="FK1" value="+3" id="Yes">
+            <input type="radio" name="FK1" value="+2" id="Maybe">
+            <input type="radio" name="FK1" value="+1" id="unsure">
+            <input type="radio" name="FK1" value="+0" id="idk">
+            <input type="radio" name="FK1" value="-1" id="Super_unsure">
+            <input type="radio" name="FK1" value="-2" id="Maybe_not">
+            <input type="radio" name="FK1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>33.คุณมีทักษะในการทำอาหารหรือขนมที่ซับซ้อนได้ด้วยตัวเองใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="TK1" value="+3" id="Yes">
+            <input type="radio" name="TK1" value="+2" id="Maybe">
+            <input type="radio" name="TK1" value="+1" id="unsure">
+            <input type="radio" name="TK1" value="+0" id="idk">
+            <input type="radio" name="TK1" value="-1" id="Super_unsure">
+            <input type="radio" name="TK1" value="-2" id="Maybe_not">
+            <input type="radio" name="TK1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>34.คุณมักจะมีทักษะในการเล่นดนตรีหรือเครื่องดนตรีอย่างน้อยหนึ่งชนิดใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="FK2" value="+3" id="Yes">
+            <input type="radio" name="FK2" value="+2" id="Maybe">
+            <input type="radio" name="FK2" value="+1" id="unsure">
+            <input type="radio" name="FK2" value="+0" id="idk">
+            <input type="radio" name="FK2" value="-1" id="Super_unsure">
+            <input type="radio" name="FK2" value="-2" id="Maybe_not">
+            <input type="radio" name="FK2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>35.คุณมีทักษะในการถ่ายภาพหรือตัดต่อวิดีโอเพื่อให้ดูมืออาชีพใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="TK2" value="+3" id="Yes">
+            <input type="radio" name="TK2" value="+2" id="Maybe">
+            <input type="radio" name="TK2" value="+1" id="unsure">
+            <input type="radio" name="TK2" value="+0" id="idk">
+            <input type="radio" name="TK2" value="-1" id="Super_unsure">
+            <input type="radio" name="TK2" value="-2" id="Maybe_not">
+            <input type="radio" name="TK2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>36.คุณมักจะมีทักษะในการเจรจาต่อรองเพื่อให้ได้ผลลัพธ์ที่ต้องการใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="FK3" value="+3" id="Yes">
+            <input type="radio" name="FK3" value="+2" id="Maybe">
+            <input type="radio" name="FK3" value="+1" id="unsure">
+            <input type="radio" name="FK3" value="+0" id="idk">
+            <input type="radio" name="FK3" value="-1" id="Super_unsure">
+            <input type="radio" name="FK3" value="-2" id="Maybe_not">
+            <input type="radio" name="FK3" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>37.คุณมีทักษะในการซ่อมแซมอุปกรณ์อิเล็กทรอนิกส์หรือเครื่องจักรเบื้องต้นใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="TK3" value="+3" id="Yes">
+            <input type="radio" name="TK3" value="+2" id="Maybe">
+            <input type="radio" name="TK3" value="+1" id="unsure">
+            <input type="radio" name="TK3" value="+0" id="idk">
+            <input type="radio" name="TK3" value="-1" id="Super_unsure">
+            <input type="radio" name="TK3" value="-2" id="Maybe_not">
+            <input type="radio" name="TK3" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>38.คุณมักจะมีทักษะในการเขียนบทความหรือเรื่องราวที่น่าอ่านใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="AK2" value="+3" id="Yes">
+            <input type="radio" name="AK2" value="+2" id="Maybe">
+            <input type="radio" name="AK2" value="+1" id="unsure">
+            <input type="radio" name="AK2" value="+0" id="idk">
+            <input type="radio" name="AK2" value="-1" id="Super_unsure">
+            <input type="radio" name="AK2" value="-2" id="Maybe_not">
+            <input type="radio" name="AK2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>39.คุณมีทักษะในการออกกำลังกายหรือกีฬาที่ต้องใช้ความอดทนสูงใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="TK4" value="+3" id="Yes">
+            <input type="radio" name="TK4" value="+2" id="Maybe">
+            <input type="radio" name="TK4" value="+1" id="unsure">
+            <input type="radio" name="TK4" value="+0" id="idk">
+            <input type="radio" name="TK4" value="-1" id="Super_unsure">
+            <input type="radio" name="TK4" value="-2" id="Maybe_not">
+            <input type="radio" name="TK4" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>40.คุณมักจะมีทักษะในการจัดการงบประมาณหรือการเงินส่วนตัวให้มีประสิทธิภาพใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="MK1" value="+3" id="Yes">
+            <input type="radio" name="MK1" value="+2" id="Maybe">
+            <input type="radio" name="MK1" value="+1" id="unsure">
+            <input type="radio" name="MK1" value="+0" id="idk">
+            <input type="radio" name="MK1" value="-1" id="Super_unsure">
+            <input type="radio" name="MK1" value="-2" id="Maybe_not">
+            <input type="radio" name="MK1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+        </form>
+        
+        <button type="submit" id="enter" class="enter" onclick="send(event)">Send</button>
+
+    </div>
+
+    <script>
+        async function send(event) {
+            event.preventDefault();
+
+            //Aptitude
+            let OA_score = 0, AA_score = 0, PA_score = 0;
+
+            //Preferences
+            let IP_score = 0, QP_score = 0, EP_score = 0, LP_score = 0;
+
+            //Special Abilities
+            let WS_score = 0, BS_score = 0, OS_score = 0, DS_score = 0;
+
+            //Skills
+            let AK_score = 0, FK_score = 0, TK_score = 0, MK_score = 0;
+
+            //Aptitude
+            document.querySelectorAll('input[name^="OA"]:checked').forEach(r => OA_score += parseInt(r.value));
+            document.querySelectorAll('input[name^="AA"]:checked').forEach(r => AA_score += parseInt(r.value));
+            document.querySelectorAll('input[name^="PA"]:checked').forEach(r => PA_score += parseInt(r.value));
+
+            //Preferences
+            document.querySelectorAll('input[name^="IP"]:checked').forEach(r => IP_score += parseInt(r.value));
+            document.querySelectorAll('input[name^="QP"]:checked').forEach(r => QP_score += parseInt(r.value));
+            document.querySelectorAll('input[name^="EP"]:checked').forEach(r => EP_score += parseInt(r.value));
+            document.querySelectorAll('input[name^="LP"]:checked').forEach(r => LP_score += parseInt(r.value));
+
+            //Special Abilities
+            document.querySelectorAll('input[name^="WS"]:checked').forEach(r => WS_score += parseInt(r.value));
+            document.querySelectorAll('input[name^="BS"]:checked').forEach(r => BS_score += parseInt(r.value));
+            document.querySelectorAll('input[name^="OS"]:checked').forEach(r => OS_score += parseInt(r.value));
+            document.querySelectorAll('input[name^="DS"]:checked').forEach(r => DS_score += parseInt(r.value));
+
+            //Skills
+            document.querySelectorAll('input[name^="AK"]:checked').forEach(r => AK_score += parseInt(r.value));
+            document.querySelectorAll('input[name^="FK"]:checked').forEach(r => FK_score += parseInt(r.value));
+            document.querySelectorAll('input[name^="TK"]:checked').forEach(r => TK_score += parseInt(r.value));
+            document.querySelectorAll('input[name^="MK"]:checked').forEach(r => MK_score += parseInt(r.value));
+
+            let aptitude = Math.max(OA_score, AA_score, PA_score);
+            let preferences = Math.max(IP_score, QP_score, EP_score, LP_score);
+            let specialAbilities = Math.max(WS_score, BS_score, OS_score, DS_score);
+            let skills = Math.max(AK_score, FK_score, TK_score, MK_score);
+
+            let a = [];
+            let p = [];
+            let s = [];
+            let k = [];
+
+            if (OA_score === aptitude) a.push("ถนัดมองเห็นโอกาส / ภาพรวม");
+            if (AA_score === aptitude) a.push("ถนัดแก้ปัญหาหน้างาน / ปรับตามสถานการณ์");
+            if (PA_score === aptitude) a.push("ถนัดวิเคราะห์ วางแผนล่วงหน้า");
+
+            if (IP_score === preferences) p.push("ชอบทำงานคนเดียว / เงียบ");
+            if (QP_score === preferences) p.push("ชอบเนื้อหาลึก กระตุ้นความคิด");
+            if (EP_score === preferences) p.push("ชอบทำงานเป็นกลุ่ม / คึกคัก");
+            if (LP_score === preferences) p.push("");
+
+            if (WS_score === specialAbilities) s.push("ความสามารถพิเศษคือ เห็นจุดอ่อน / ความเสี่ยง / อนาคตก่อน");
+            if (BS_score === specialAbilities) s.push("ความสามารถพิเศษคือ เข้าใจคนจากการสังเกตลึก");
+            if (OS_score === specialAbilities) s.push("ความสามารถพิเศษคือ เห็นจุดแข็ง / โอกาสตรงหน้าชัด");
+            if (DS_score === specialAbilities) s.push("ความสามารถพิเศษคือ เข้าใจคนจากการสื่อสารตรง");
+
+            if (AK_score === skills) k.push("มีทักษะ วิเคราะห์ วางระบบ คิดเป็นโครงสร้าง");
+            if (FK_score === skills) k.push("มีทักษะ ใช้ความยืดหยุ่นและประสบการณ์");
+            if (TK_score === skills) k.push("มีทักษะ ลงมือทำ แก้ปัญหาทันที");
+            if (MK_score === skills) k.push("มีทักษะ จัดการเวลา / เงิน / ทรัพยากร");
+
+            // 3. เตรียมข้อมูลส่ง
+            const addressInput = document.getElementById('address');
+            const enter = document.getElementById('enter');
+
+            enter.disabled = true;
+
+            // ตรวจสอบว่ากรอกข้อมูลครบไหม
+            if (addressInput.value && a.length > 0 && p.length > 0 && s.length > 0 && k.length > 0) {
+
+                try {
+                    const response = await fetch('http://127.0.0.1:5001/ask', { 
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            Aptitude: a,
+                            Preferences: p,
+                            Special_Abilities: s,
+                            Skills: k,
+                            address: addressInput.value,
+                        })
+                    });
+
+                    const data = await response.json();
+                    
+                    if (data.text) {
+
+                        localStorage.setItem('jobjub_result', data.text);
+                        localStorage.setItem('aptitude', a);
+                        localStorage.setItem('preferences', p);
+                        localStorage.setItem('special_abilities', s);
+                        localStorage.setItem('skills', k);
+
+                        window.location.href = 'result.html';
+                    } else {
+                        alert('❌ เกิดข้อผิดพลาดจาก Server: ' + data.error)
+                    }
+
+                } catch (error) {
+                    console.error(error);
+                }
+            } else {
+                alert('⚠️ กรุณากรอกจังหวัดและทำแบบทดสอบให้ครบทุกข้อ');
+            }
+        }
+    </script>
+</body>
+</html>
