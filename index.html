@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobJub</title>
+    <style>
+        body {
+            margin: 1px;
+            background-color:beige;
+            color: teal;
+        }
+        #enter {
+            width: 100px;
+            height:80px;
+            margin:20px;
+        }
+        #Yes {
+            width: 90px;
+            height: 90px;
+            margin: 20px;
+            margin-top: 5px;
+            margin-bottom: 70px;
+            background-color:lightgreen;
+            accent-color:green;
+        }
+        #Maybe {
+            width: 75px;
+            height: 75px;
+            margin: 20px;
+            margin-top: 5px;
+            margin-bottom: 70px;
+            
+        }
+        #unsure {
+            width: 60px;
+            height: 60px;
+            margin: 20px;
+            margin-top: 5px;
+            margin-bottom: 70px;
+        }
+        #idk {
+            width: 45px;
+            height: 45px;
+            margin: 20px;
+            margin-top: 5px;
+            margin-bottom: 70px;
+        }
+        #Super_unsure {
+            width: 60px;
+            height: 60px;
+            margin: 20px;
+            margin-top: 5px;
+            margin-bottom: 70px;
+        }
+        #Maybe_not {
+            width: 75px;
+            height: 75px;
+            margin: 20px;
+            margin-top: 5px;
+            margin-bottom: 70px;
+        }
+        #No {
+            width: 90px;
+            height: 90px;
+            margin: 20px;
+            margin-top: 5px;
+            margin-bottom: 70px;
+        }
+        #yesLabel {
+            font-size: xxx-large;
+            margin-bottom: 1000px;
+            }
+        #noLabel {
+            font-size: xxx-large;
+            margin-bottom: 1000px;
+            }
+        #address {
+               width:450px;
+            height: 45px;
+            margin-bottom:45px;
+            font-size:large;
+                 }
+        #info {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <form id="ข้อมูล">
+            <input type="text" name="address" id="address" placeholder="จังหวัดที่อยู่">
+          
+        </form>
+
+        <form id="question">
+            <h2>1.คุณมักจะมองเห็นโอกาสในสถานการณ์ที่คนอื่นเห็นแต่ปัญหาเท่านั้นใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="Q1" value="+3" id="Yes">
+            <input type="radio" name="Q1" value="+2" id="Maybe">
+            <input type="radio" name="Q1" value="+1" id="unsure">
+            <input type="radio" name="Q1" value="+0" id="idk">
+            <input type="radio" name="Q1" value="-1" id="Super_unsure">
+            <input type="radio" name="Q1" value="-2" id="Maybe_not">
+            <input type="radio" name="Q1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label>
+
+            <h2>2.คุณสามารถปรับตัวเข้ากับการเปลี่ยนแปลงที่ไม่คาดคิดได้อย่างรวดเร็วใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="Q2" value="+3" id="Yes">
+            <input type="radio" name="Q2" value="+2" id="Maybe">
+            <input type="radio" name="Q2" value="+1" id="unsure">
+            <input type="radio" name="Q2" value="+0" id="idk">
+            <input type="radio" name="Q2" value="-1" id="Super_unsure">
+            <input type="radio" name="Q2" value="-2" id="Maybe_not">
+            <input type="radio" name="Q2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label>
+
+            <h2>3.คุณถนัดในการวิเคราะห์ข้อมูลที่ซับซ้อนเพื่อหาข้อสรุปที่ชัดเจนหรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="L1" value="+3" id="Yes">
+            <input type="radio" name="L1" value="+2" id="Maybe">
+            <input type="radio" name="L1" value="+1" id="unsure">
+            <input type="radio" name="L1" value="+0" id="idk">
+            <input type="radio" name="L1" value="-1" id="Super_unsure">
+            <input type="radio" name="L1" value="-2" id="Maybe_not">
+            <input type="radio" name="L1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label>
+
+            <h2>4.คุณมีความถนัดในการจัดการเวลาเพื่อให้งานหลายอย่างเสร็จทันกำหนดใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="L2" value="+3" id="Yes">
+            <input type="radio" name="L2" value="+2" id="Maybe">
+            <input type="radio" name="L2" value="+1" id="unsure">
+            <input type="radio" name="L2" value="+0" id="idk">
+            <input type="radio" name="L2" value="-1" id="Super_unsure">
+            <input type="radio" name="L2" value="-2" id="Maybe_not">
+            <input type="radio" name="L2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label>
+
+            <h2>5.คุณมักจะถนัดในการแก้ไขปัญหาทางเทคนิคโดยไม่ต้องพึ่งพาคนอื่นใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E1" value="+3" id="Yes">
+            <input type="radio" name="E1" value="+2" id="Maybe">
+            <input type="radio" name="E1" value="+1" id="unsure">
+            <input type="radio" name="E1" value="+0" id="idk">
+            <input type="radio" name="E1" value="-1" id="Super_unsure">
+            <input type="radio" name="E1" value="-2" id="Maybe_not">
+            <input type="radio" name="E1" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>6.คุณมีความถนัดในการเรียนรู้ทักษะใหม่ๆ จากการทดลองด้วยตัวเองใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>7.คุณถนัดในการสังเกตพฤติกรรมของคนอื่นเพื่อเข้าใจแรงจูงใจของพวกเขาหรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>8.คุณมักจะถนัดในการวางแผนระยะยาวที่ครอบคลุมรายละเอียดเล็กน้อยใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>9.คุณมีความถนัดในการทำงานภายใต้แรงกดดันโดยไม่เสียสมาธิใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>10.คุณถนัดในการเชื่อมโยงไอเดียจากหลากหลายสาขาเพื่อสร้างแนวคิดใหม่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>11.คุณชอบสภาพแวดล้อมที่เงียบสงบมากกว่าที่พลุกพล่านและมีเสียงดังใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>11.คุณมักจะชอบทำงานคนเดียวมากกว่างานที่ต้องร่วมมือกับทีมใหญ่ใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+            
+            <h2>12.คุณชอบหนังสือหรือเนื้อหาที่กระตุ้นความคิดมากกว่าที่เน้นความบันเทิงใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>13.คุณมักจะชอบการสนทนาที่ลึกซึ้งมากกว่าการพูดคุยเรื่องทั่วไปใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>14.คุณชอบกิจกรรมกลางแจ้งที่ผจญภัยมากกว่าการพักผ่อนแบบสบายๆในบ้านใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>15.คุณมักจะชอบอาหารรสชาติแปลกใหม่มากกว่าอาหารที่คุ้นเคยเดิมๆใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>16.คุณชอบเพลงที่ซับซ้อนทางดนตรีมากกว่าเพลงที่ติดหูง่ายๆใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>17.คุณมักจะชอบการเดินทางคนเดียวมากกว่าการไปกับกลุ่มเพื่อนใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>18.คุณชอบงานอดิเรกที่ต้องใช้สมองมากกว่างานที่ต้องใช้แรงกายใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>19.คุณมักจะชอบสีสันที่เรียบง่ายและมินิมอลมากกว่าที่สดใสฉูดฉาดใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>20.คุณมีความสามารถพิเศษในการจดจำรายละเอียดเล็กๆ น้อยๆ ได้นานใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>21.คุณมักจะมีความสามารถพิเศษในการโน้มน้าวใจคนอื่นด้วยคำพูดใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>22.คุณมีความสามารถพิเศษในการมองเห็นจุดอ่อนในแผนการก่อนที่มันจะล้มเหลวใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>23.คุณมักจะมีความสามารถพิเศษในการสร้างสรรค์ไอเดียที่ไม่เหมือนใครใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>24.คุณมีความสามารถพิเศษในการอ่านอารมณ์ของคนอื่นจากภาษากายใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>25.คุณมักจะมีความสามารถพิเศษในการแก้ปัญหาด้วยวิธีที่ประหยัดเวลาใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>25.คุณมีความสามารถพิเศษในการเรียนภาษาใหม่ได้เร็วกว่าคนทั่วไปใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>26.คุณมักจะมีความสามารถพิเศษในการจัดการความขัดแย้งให้จบลงด้วยดีใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>27.คุณมีความสามารถพิเศษในการวาดภาพหรือออกแบบสิ่งของจากจินตนาการใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>28.คุณมักจะมีความสามารถพิเศษในการคาดการณ์แนวโน้มในอนาคตจากข้อมูลปัจจุบันใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>29.คุณมีทักษะในการเขียนโค้ดหรือโปรแกรมคอมพิวเตอร์ในระดับพื้นฐานหรือสูงกว่าใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>30.คุณมักจะมีทักษะในการพูดต่อหน้าสาธารณะโดยไม่ตื่นตระหนกใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>31.คุณมีทักษะในการทำอาหารหรือขนมที่ซับซ้อนได้ด้วยตัวเองใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>32.คุณมักจะมีทักษะในการเล่นดนตรีหรือเครื่องดนตรีอย่างน้อยหนึ่งชนิดใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>33.คุณมีทักษะในการถ่ายภาพหรือตัดต่อวิดีโอเพื่อให้ดูมืออาชีพใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>34.คุณมักจะมีทักษะในการเจรจาต่อรองเพื่อให้ได้ผลลัพธ์ที่ต้องการใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>35.คุณมีทักษะในการซ่อมแซมอุปกรณ์อิเล็กทรอนิกส์หรือเครื่องจักรเบื้องต้นใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>36.คุณมักจะมีทักษะในการเขียนบทความหรือเรื่องราวที่น่าอ่านใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>37.คุณมีทักษะในการออกกำลังกายหรือกีฬาที่ต้องใช้ความอดทนสูงใช่ไหม?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+
+            <h2>38.คุณมักจะมีทักษะในการจัดการงบประมาณหรือการเงินส่วนตัวให้มีประสิทธิภาพใช่หรือไม่?</h2>
+            <label for="Yes" id="yesLabel">Yes</label>
+            <input type="radio" name="E2" value="+3" id="Yes">
+            <input type="radio" name="E2" value="+2" id="Maybe">
+            <input type="radio" name="E2" value="+1" id="unsure">
+            <input type="radio" name="E2" value="+0" id="idk">
+            <input type="radio" name="E2" value="-1" id="Super_unsure">
+            <input type="radio" name="E2" value="-2" id="Maybe_not">
+            <input type="radio" name="E2" value="-3" id="No">
+            <label for="No" id="noLabel">No</label><br>
+        </form>
+        
+        <button type="submit" id="enter" class="enter" onclick="send(event)">Send</button>
+
+    </div>
+
+    <img src="icon.jpg" style="width: 70px; height: 70px; border-radius: 100%;">
+    <h1 id="text">Hi</h1>
+
+    <script>
+        async function send() {
+
+            event.preventDefault();
+
+            let Q_score = 0;
+            let L_score = 0;
+            let E_score = 0;
+            document.querySelectorAll('input[name^="Q"]:checked').forEach(radio => {
+                Q_score += parseInt(radio.value);
+            });
+            document.querySelectorAll('input[name^="L"]:checked').forEach(radio => {
+                L_score += parseInt(radio.value);
+            });
+            document.querySelectorAll('input[name^="E"]:checked').forEach(radio => {
+                E_score += parseInt(radio.value);
+            });
+            const address = document.getElementById('address');
+            const grade = document.getElementById('grade');
+            const text = document.getElementById('text');
+
+            ////////////บอกว่าคำแนนที่มากที่สุดอยู่ที่เท่าไร///////////
+            let full = Math.max(Q_score, L_score, E_score);
+            //////////////////////////////////////////////
+            let winner = [];
+
+            //ดูว่าสายไหนคือสายที่คะแนนมากที่สุด และ ขึ้นเป็น winner
+            if (Q_score === full) winner.push('วิทย์');
+            if (L_score === full) winner.push('ภาษา');
+            if (E_score === full) winner.push('วิศวะ');
+            ///////////////////////////////////////////
+
+            if (winner && address.value) {
+
+                text.innerHTML = 'กำลังคิด...';
+
+                try {
+                    const response = await fetch('http://127.0.0.1:5001/ask', { 
+                            method: 'POST',
+                            headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                            body: JSON.stringify({ 
+                                track: winner,
+                                address: address.value,
+                                grade: grade.value
+                            })
+                    });
+
+                    const data = await response.json();
+                    if (!data) {
+                        console.log(data.error);
+                    }
+                    
+                    text.innerHTML = data.text;
+                } catch (error){
+                    console.error
+                }
+            } else {
+                text.innerHTML = 'ป้อนข้อมูลเหอะ';
+            }
+        }
+    </script>
+</body>
+
+
+</html>
