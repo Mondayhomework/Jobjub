@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result - JobJub</title>
+    <style>
+        body {
+            margin: 0px;
+            background-color:beige;
+            color: teal;
+            font-family: Playpen;
+        }
+        #result {
+            justify-self: center;
+            margin-top: 50px;
+            font-family: Playpen;
+            width: 1000px;
+        }
+        #no-answer {
+            display: none;
+            justify-self: center;
+            text-align: center;
+            margin-top: 50px;
+            font-family: Playpen;
+        }
+        @font-face {
+            font-family: Playpen;
+            src: url(PlaypenSansThai-VariableFont_wght.ttf);
+        }
+    </style>
+</head>
+<body>
+    <div id="result">
+        <h3 id="result-text"></h3>
+        <h3 id="aText"></h3>
+        <h3 id="pText"></h3>
+        <h3 id="sText"></h3>
+        <h3 id="kText"></h3>
+    </div>
+
+    <div id="no-answer">
+        <h1 id="none">None</h1>
+    </div>
+
+    <script>
+        const result = sessionStorage.getItem('jobjub_result');
+        const a = sessionStorage.getItem('aptitude');
+        const p = sessionStorage.getItem('preferences');
+        const s = sessionStorage.getItem('special_abilities');
+        const k = sessionStorage.getItem('skills');
+
+        if (result) {
+            document.getElementById('result-text').innerText = result;
+            document.getElementById('aText').innerText = a;
+            document.getElementById('pText').innerText = p;
+            document.getElementById('sText').innerText = s;
+            document.getElementById('kText').innerText = k;
+        } else {
+            document.getElementById('no-answer').style.display = 'block';
+            document.getElementById('result').style.display = 'none';
+            document.getElementById('none').innerText = 'ไม่พบข้อมูลผลการทดสอบ';
+        }
+    </script>
+</body>
+</html>
