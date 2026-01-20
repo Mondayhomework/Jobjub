@@ -1064,12 +1064,21 @@
                     
                     if (data.text) {
 
+<<<<<<< HEAD
                         sessionStorage.setItem('jobjub_result', data.text);
                         sessionStorage.setItem('aptitude', a);
                         sessionStorage.setItem('preferences', p);
                         sessionStorage.setItem('special_abilities', s);
                         sessionStorage.setItem('skills', k);
                         
+=======
+                        localStorage.setItem('jobjub_result', data.text);
+                        localStorage.setItem('aptitude', a);
+                        localStorage.setItem('preferences', p);
+                        localStorage.setItem('special_abilities', s);
+                        localStorage.setItem('skills', k);
+
+>>>>>>> f7d6a4135fa4424d85e686f980aad169809534bb
                         window.location.href = 'result.html';
                     } else {
                         alert('❌ เกิดข้อผิดพลาดจาก Server: ' + data.error)
